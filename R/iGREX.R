@@ -5,9 +5,9 @@ iGREX <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL,cov_GWAS, K
   cat("########## Stage Two starts ##########\n")
   G <- nrow(fit_init$gene_info_match)
   if(method=="REML"){
-    fit_iGREX <- REML_3var(fit_init$K/G,Ka,fit_init$z,cov_GWAS[,-1])
+    fit_iGREX <- REML_3var(fit_init$K/G,Ka,fit_init$z,fit_init$cov_GWAS[,-1])
   } else if(method=="MoM"){
-    fit_iGREX <- MoM_3var(fit_init$K/G,Ka,fit_init$z,cov_GWAS[,-1])
+    fit_iGREX <- MoM_3var(fit_init$K/G,Ka,fit_init$z,fit_init$cov_GWAS[,-1])
   }
   return(list(fit_init,fit_iGREX))
 }
