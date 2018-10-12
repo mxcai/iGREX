@@ -11,7 +11,7 @@ To install the development version of bivas, it's easiest to use the 'devtools' 
 ```
 #install.packages("devtools")
 library(devtools)
-install_github("mxcai/bivas")
+install_github("mxcai/iGREX")
 ```
 
 Usage
@@ -19,8 +19,8 @@ Usage
 The following help page provides quick reference and examples:
 
 ```
-library(bivas)
-package?bivas
+library(iGREX)
+package?iGREX
 ```
 
 Development
