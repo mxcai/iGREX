@@ -16,7 +16,7 @@ install_github("mxcai/iGREX")
 
 Usage
 ===========
-The following help page provides quick reference and examples:
+[The 'iGREX' vignette](https://github.com/mxcai/bivas/blob/master/vignettes/iGREX.pdf?raw=true) provides a quick start for the usage of the package. The following help page also provides quick reference and examples:
 
 ```
 library(iGREX)
