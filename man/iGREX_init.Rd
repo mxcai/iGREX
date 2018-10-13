@@ -38,7 +38,7 @@ iGREX_init(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, whCol, 
   \item{snp_info }{Data frame containing the information of matched SNPs, e.g. Chr, rsname and BP.}
   \item{gene_info_all }{Data frame containing the information of all genes, e.g. lower, upper, genetype1, genetype2, TargetID, Chr.}
   \item{gene_info_match }{Data frame containing the information of matched genes, e.g. lower, upper, genetype1, genetype2, TargetID, Chr.}
-  \item{out_param }{Matrix of PX-EM outputs for each gene. Columns are estimate of \sigma_{\beta}^2, estimate of \sigma_{y}^2, log-likelihood at convergence, number of cis_SNPs, gene level cis-heritability}
+  \item{out_param }{Matrix of PX-EM outputs for each gene. Columns are estimate of $\sigma_{\beta}^2$, estimate of $\sigma_{y}^2$, log-likelihood at convergence, number of cis_SNPs, gene level cis-heritability}
   \item{K }{GREX kinship matrix.}
   \item{K0 }{GREX kinship matrix without accounting for mearsurement error.}
   \item{subsample }{Subsample size.}
