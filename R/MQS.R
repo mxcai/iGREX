@@ -41,7 +41,7 @@ MQS <- function(file_z,file_ref,file_cov=NULL,K=NULL,X=NULL,sd_method="LD_block"
 
   # remove fault SNPs
   idx_rm <- (snp_A1+snp_A2)!=(z_A1+z_A2)
-  idx_ref <- idx_ref[!idx_rm]
+  c <- idx_ref[!idx_rm]
   idx_z <- idx_z[!idx_rm]
   snp_ref <- snp_ref[!idx_rm,]
   z_G <- z_G[!idx_rm,]
