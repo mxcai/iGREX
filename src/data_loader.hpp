@@ -34,6 +34,8 @@ Rcpp::List dataLoader2(std::string stringname1, std::string stringname2, std::st
 Rcpp::List dataLoader_ss(std::string stringname1, std::string stringname2, std::string stringname3, std::string stringname4, int whCol);
 void ReadZscore(std::string filename, IntegerVector A1, IntegerVector A2, CharacterVector rsname,
                 IntegerVector N, NumericVector z_score, int P);
+void matchTrans(umat& idx_trans_pair, CharacterVector& trans_gene, CharacterVector& trans_SNP, CharacterVector targetID, CharacterVector rsname_4use_r, std::string trans_eQTL, int nTrans);
+void getTrans(std::string trans_eQTL, CharacterVector trans_gene, CharacterVector trans_SNP, int nTrans);
 // Rcpp::List ReadZscore(std::string filename, int P)
 //Rcpp::List dataLoader3(std::string stringname1, std::string stringname2, std::string stringname4, std::string stringname5, char* X1, char* X2)；
 

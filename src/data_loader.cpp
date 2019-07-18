@@ -940,3 +940,59 @@ Rcpp::List dataLoader_ss(std::string stringname1, std::string stringname2, std::
   return output;
 
 }
+
+
+
+void getTrans(std::string trans_eQTL, CharacterVector trans_gene, CharacterVector trans_SNP, int nTrans){
+  FILE *stream;
+
+  char gene[MAX_LEN + 1];
+  char snp[MAX_LEN + 1];
+
+  stream = fopen(trans_eQTL.c_str(), "r");
+  clock_t t1 = clock();
+
+  fscanf(stream, "%*[^\n]\n", NULL);
+
+  for ( int i = 0; i < nTrans; i++){
+    fscanf(stream, "%s %s", &gene[0], &snp[0]);
+
+    trans_gene(i) = gene;
+    trans_SNP(i) = snp;
+  }
+  // cout << "Elapsed time is " << (clock() - t1)*1.0 / CLOCKS_PER_SEC << " sec" << endl;
+}
+
+
+void matchTrans(umat& idx_trans_pair, CharacterVector& trans_gene, CharacterVector& trans_SNP, CharacterVector targetID,
+                CharacterVector rsname_4use_r, std::string trans_eQTL, int nTrans){
+  getTrans(trans_eQTL, trans_gene, trans_SNP, nTrans);
+  // match for genes in expr file
+  CharacterVector targetID2(targetID.length());// = targetID.substr(0,14);
+  // remove ensembl version number if any
+  for ( int i = 0; i < targetID.length(); i++){
+    std::string tmp =  as<std::string>(targetID[i]);
+    targetID2[i] = tmp.substr(0,15);
+  }
+  IntegerVector idxin = match(trans_gene, targetID2); //index for trans-genes in gene expression file with unmatched NA
+  trans_gene = trans_gene[Rcpp::is_na(idxin) == false];  //remove the unmatched trans-genes
+  trans_SNP = trans_SNP[Rcpp::is_na(idxin) == false];
+  cout << trans_gene.length() << endl;
+  // IntegerVector idxinGE = match(trans_gene, targetID2);  //index for matched trans-genes in gene expr file
+  // match for SNPs in geno file
+  idxin = match(trans_SNP, rsname_4use_r); //index for trans-SNPs in genotype ref with unmatched NA
+  trans_gene = trans_gene[Rcpp::is_na(idxin) == false];  //remove the unmatched trans-SNPs
+  trans_SNP = trans_SNP[Rcpp::is_na(idxin) == false];
+  cout << trans_gene.length() << endl;
+  IntegerVector idxinGE = match(trans_gene, targetID2);  //index for matched trans-genes in gene expr file
+  IntegerVector idxinGeno = match(trans_SNP, rsname_4use_r);  //index for matched trans-SNPs in genotype ref
+
+  uvec tmp1 = as<uvec>(idxinGE) -1;
+  uvec tmp2 = as<uvec>(idxinGeno) -1;
+  idx_trans_pair = join_rows(tmp1,tmp2);
+
+  tmp1 = unique(tmp1);
+  tmp2 = unique(tmp2);
+  cout << "Number of matched trans-genes:" << tmp1.n_elem << endl;
+  cout << "Number of matched trans-SNPs:" << tmp2.n_elem << endl;
+}
