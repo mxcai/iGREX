@@ -23,6 +23,12 @@ library(iGREX)
 package?iGREX
 ```
 
+References
+==========
+
+Mingxuan Cai, Lin S Chen, Jin Liu and Can Yang. IGREX for quantifying the impact of genetically regulated expression on phenotypes. biorxiv: https://www.biorxiv.org/content/10.1101/546580v2.
+
+
 Development
 ==========
 
