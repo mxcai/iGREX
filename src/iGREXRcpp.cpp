@@ -771,14 +771,14 @@ RcppExport SEXP iGREX_init(std::string prefix_eQTL_geno, std::string prefix_GWAS
 
 // [[Rcpp::export]]
 RcppExport SEXP iGREXs_init(std::string prefix_eQTL_geno, std::string prefix_GWAS, std::string gene_expr, std::string Z_score, std::string cov_eQTL,
-                                  std::string cov_GWAS,std::string trans_eQTL, int whCol, int bw){ //int normalize_option = 1, int pred_option = 0){//, char* A21, char* A22){
+                                  std::string cov_GWAS,std::string trans_eQTL, int bw){ //int normalize_option = 1, int pred_option = 0){//, char* A21, char* A22){
   // normalize_option: 1. normalize each separately, 2. normalize both plink files together
   // match SNPs in file 1 and file 2 GWAS (common SNPs in x1 and x2 in columns)
   // plink file 1: prefix_eQTL_geno; plink file 2: prefix_GWAS; expression file: gene_expr
   // covariates file for file 1: cov_eQTL; covariates file for file 2: cov_GWAS
   // pred_option :0 (no calculation for prediction) 1 (calcuation for prediction)
 
-  List tmp = dataLoader_ss(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, whCol);
+  List tmp = dataLoader_ss(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, 1);
   vec z = tmp["y"];
   mat expr = tmp["expr_used"], ind = tmp["ind"];
   CharacterVector rsname_4use_r = tmp["rsname_4use_r"];

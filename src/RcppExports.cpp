@@ -75,8 +75,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // iGREXs_init
-RcppExport SEXP iGREXs_init(std::string prefix_eQTL_geno, std::string prefix_GWAS, std::string gene_expr, std::string Z_score, std::string cov_eQTL, std::string cov_GWAS, std::string trans_eQTL, int whCol, int bw);
-RcppExport SEXP _iGREX_iGREXs_init(SEXP prefix_eQTL_genoSEXP, SEXP prefix_GWASSEXP, SEXP gene_exprSEXP, SEXP Z_scoreSEXP, SEXP cov_eQTLSEXP, SEXP cov_GWASSEXP, SEXP trans_eQTLSEXP, SEXP whColSEXP, SEXP bwSEXP) {
+RcppExport SEXP iGREXs_init(std::string prefix_eQTL_geno, std::string prefix_GWAS, std::string gene_expr, std::string Z_score, std::string cov_eQTL, std::string cov_GWAS, std::string trans_eQTL, int bw);
+RcppExport SEXP _iGREX_iGREXs_init(SEXP prefix_eQTL_genoSEXP, SEXP prefix_GWASSEXP, SEXP gene_exprSEXP, SEXP Z_scoreSEXP, SEXP cov_eQTLSEXP, SEXP cov_GWASSEXP, SEXP trans_eQTLSEXP, SEXP bwSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -87,9 +87,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< std::string >::type cov_eQTL(cov_eQTLSEXP);
     Rcpp::traits::input_parameter< std::string >::type cov_GWAS(cov_GWASSEXP);
     Rcpp::traits::input_parameter< std::string >::type trans_eQTL(trans_eQTLSEXP);
-    Rcpp::traits::input_parameter< int >::type whCol(whColSEXP);
     Rcpp::traits::input_parameter< int >::type bw(bwSEXP);
-    rcpp_result_gen = Rcpp::wrap(iGREXs_init(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL, cov_GWAS, trans_eQTL, whCol, bw));
+    rcpp_result_gen = Rcpp::wrap(iGREXs_init(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL, cov_GWAS, trans_eQTL, bw));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -99,7 +98,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_iGREX_iGREX_Kg", (DL_FUNC) &_iGREX_iGREX_Kg, 6},
     {"_iGREX_iGREX_raw", (DL_FUNC) &_iGREX_iGREX_raw, 8},
     {"_iGREX_iGREX_init", (DL_FUNC) &_iGREX_iGREX_init, 9},
-    {"_iGREX_iGREXs_init", (DL_FUNC) &_iGREX_iGREXs_init, 9},
+    {"_iGREX_iGREXs_init", (DL_FUNC) &_iGREX_iGREXs_init, 8},
     {NULL, NULL, 0}
 };
 
