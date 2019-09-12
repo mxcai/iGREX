@@ -13,7 +13,11 @@ iGREX_raw <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GW
     .Call(`_iGREX_iGREX_raw`, prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, whCol, bw, subsample)
 }
 
-iGREX_init <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, whCol, bw, subsample) {
-    .Call(`_iGREX_iGREX_init`, prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, whCol, bw, subsample)
+iGREX_init <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, trans_eQTL, whCol, bw, subsample) {
+    .Call(`_iGREX_iGREX_init`, prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, trans_eQTL, whCol, bw, subsample)
+}
+
+iGREXs_init <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL, cov_GWAS, trans_eQTL, bw) {
+    .Call(`_iGREX_iGREXs_init`, prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL, cov_GWAS, trans_eQTL, bw)
 }
 
