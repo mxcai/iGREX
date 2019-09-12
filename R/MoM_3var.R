@@ -65,7 +65,7 @@ MoM_3var <- function(K1,K2,y,Z=NULL){
   se2 <- sigma[3]
 
   H <- matrix(0,2,4)
-  colnames(H) <- c("h_R","h_D","h_all","h_med")
+  colnames(H) <- c("PVEg","PVEa","h2","prop")
   rownames(H) <- c("heritability","se")
 
   var_total <- s12*trK1 + s22*trK2 + se2*(n-q)
@@ -87,6 +87,6 @@ MoM_3var <- function(K1,K2,y,Z=NULL){
   gh <- c(s22*trK1*trK2/(s12*trK1 + s22*trK2)^2, -s12*trK1*trK2/(s12*trK1 + s22*trK2)^2)
   H[2,4] <- sqrt(t(gh) %*% covSig[1:2,1:2] %*% gh)
 
-  ret <- list(s12=s12,s22=s22,se2=se2,K1=K1,K2=K2,covSig=covSig,H=H)
+  ret <- list(s12=s12,s22=s22,se2=se2,K1=K1,K2=K2,covSig=covSig,PVE=H)
 
 }

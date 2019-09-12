@@ -13,9 +13,9 @@ iGREX <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL="", cov_GWA
 }
 
 
-iGREXs <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL="", cov_GWAS="", trans_eQTL="", Ka, whCol=1, bw=500000, sd_method="LD_block"){
+iGREXs <- function(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL="", cov_GWAS="", trans_eQTL="", Ka, bw=500000, sd_method="LD_block"){
   cat("########## Stage One starts ##########\n")
-  fit_init <- iGREXs_init(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL, cov_GWAS, trans_eQTL, whCol, bw)
+  fit_init <- iGREXs_init(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL, cov_GWAS, trans_eQTL, bw)
 
   cat("########## Stage Two starts ##########\n")
   fit_iGREX <- MoM_3var_ss(fit_init,Ka,sd_method = sd_method)

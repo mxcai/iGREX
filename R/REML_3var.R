@@ -91,7 +91,7 @@ REML_3var <- function(K1,K2,y,Z=NULL,maxIter=1500,tol=1e-8,verbose=T,s12=NULL,s2
   var_total <- s12*trK1 + s22*trK2 + se2*n
 
   H <- matrix(0,2,4)
-  colnames(H) <- c("h_R","h_D","h_all","h_med")
+  colnames(H) <- c("PVEg","PVEa","h2","prop")
   rownames(H) <- c("heritability","se")
   H[1,] <- c(s12*trK1/var_total, s22*trK2/var_total, (s12*trK1+s22*trK2)/var_total, s12*trK1/(s12*trK1 + s22*trK2))
 
@@ -113,7 +113,7 @@ REML_3var <- function(K1,K2,y,Z=NULL,maxIter=1500,tol=1e-8,verbose=T,s12=NULL,s2
 
 
 
-  bayesRegMM <- list(beta0=beta0,s12=s12,s22=s22,se2=se2,K1=K1,K2=K2,iter=iter,covSig=covSig,H=H)
+  bayesRegMM <- list(beta0=beta0,s12=s12,s22=s22,se2=se2,K1=K1,K2=K2,iter=iter,covSig=covSig,PVE=H)
 
   attr(bayesRegMM,"class") <- "bayesRegMM"
   bayesRegMM

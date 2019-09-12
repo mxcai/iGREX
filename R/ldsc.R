@@ -13,7 +13,7 @@ ldsc <- function(Z,r2, N, tau=NULL, W=NULL){
   # rcf = as.vector( rlm(I(Z^2) ~ I(N*r2), weight=W*Wv, psi=Ghuber, k=30)$coef )
   # return(rcf)
   fit = lm(I(Z^2-1) ~ -1 + I(N*r2), weight=W*Wv)
-  return(list(fit=summary(fit),W=Wv))
+  return(list(fit=summary(fit),Wv=Wv))
 }
 
 # ldsc1 <- function(Z,r2, N, tau=NULL, W=NULL){
