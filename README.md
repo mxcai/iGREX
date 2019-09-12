@@ -28,7 +28,7 @@ The `iGREXs` function requires only the GWAS summary statistics and the eQTL dat
 Reproducibility
 ==========
 
-All the simulation results can be reproduced by using the code at [sim-bivas](https://github.com/mxcai/sim-iGREX).
+All the simulation results can be reproduced by using the code at [sim-iGREX](https://github.com/mxcai/sim-iGREX).
 
 References
 ==========
