@@ -23,7 +23,7 @@ library(iGREX)
 package?iGREX
 ```
 
-The `iGREXs` function requires only the GWAS summary statistics and the eQTL data for analysis. The open access data used in the vignette can be downloaded from this link: https://www.dropbox.com/sh/xbq0a0or1nmcaef/AABcmzTxgWPJGpcCj9mYOzwma?dl=0.
+The `iGREXs` function requires only the GWAS summary statistics and the eQTL data for analysis. The open access data used in the vignette can be downloaded from the [drop box link](https://www.dropbox.com/sh/xbq0a0or1nmcaef/AABcmzTxgWPJGpcCj9mYOzwma?dl=0).
 
 Reproducibility
 ==========
