@@ -26,7 +26,7 @@ MoM_3var(K1, K2, y, Z = NULL)
   \item{K1 }{Correlation (covariance) matrix 1.}
   \item{K2 }{Correlation (covariance) matrix 2.}
   \item{covSig }{3 by 3 covariance matrix of 3 estimated variance components.}
-  \item{H }{2 by 4 matrix of PVE estimates and their standard errors.}
+  \item{PVE }{2 by 4 matrix of PVE estimates and their standard errors. Columns correspond to \eqn{PVE_{GREX}}, \eqn{PVE_{Alternative}}, \eqn{h^2_t} and \eqn{PVE_{GREX}/h^2_t}.}
 }
 \references{
 %% ~put references to the literature/web site here ~

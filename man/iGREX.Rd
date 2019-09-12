@@ -10,7 +10,7 @@ iGREX(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, Ka, whCol = 
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{prefix_eQTL_geno}{Prefix for eQTL genotype file with plink format (bim, bed).
+  \item{prefix_eQTL_geno}{Prefix for eQTL genotype file with plink format (bim, bed, fam).
 }
   \item{prefix_GWAS}{Prefix for GWAS genotype and phenotype file with plink format (bim, bed, fam).
 }
@@ -32,8 +32,8 @@ iGREX(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, Ka, whCol = 
 }
 }
 \value{List of outcomes:
-  \item{fit_init }{List of Stage one results. Same as the outcome of \code{\link{iGREX_init}}.}
-  \item{fit }{List of Stage two results. Same as the outcome of \code{\link{REML_3var}} or \code{\link{REML_3var}}.}
+  \item{fit_init }{List of Stage one results. Same as the output of \code{\link{iGREX_init}}.}
+  \item{output }{List of Stage two results. Same as the output of \code{\link{REML_3var}} or \code{\link{REML_3var}}.}
 }
 \references{
 %% ~put references to the literature/web site here ~
