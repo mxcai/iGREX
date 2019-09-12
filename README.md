@@ -27,7 +27,7 @@ Reproducibility
 ==========
 
 All the simulation results can be reproduced by using the code at [sim-iGREX](https://github.com/mxcai/sim-iGREX).
-The `iGREXs` function requires only the GWAS summary statistics and the eQTL data for analysis, which greatly enhances the applicability of our software. The analysis in the vignette using GWAS summary statistics can be reproduced using open access data. The processed High-Density Lipoprotein cholesterol (HDL) GWAS summary statistics, Geuvadis gene expression data and 1000 Genomes genotype data used in the analysis can be downloaded from [this Dropbox link](https://www.dropbox.com/sh/xbq0a0or1nmcaef/AABcmzTxgWPJGpcCj9mYOzwma?dl=0).
+The `iGREXs` function requires only the GWAS summary statistics and the eQTL data for analysis, which greatly enhances the applicability of our software. The analysis in the vignette using GWAS summary statistics can be reproduced with open access data. The processed High-Density Lipoprotein cholesterol (HDL) GWAS summary statistics, Geuvadis gene expression data and 1000 Genomes genotype data used in the analysis can be downloaded from [this Dropbox link](https://www.dropbox.com/sh/xbq0a0or1nmcaef/AABcmzTxgWPJGpcCj9mYOzwma?dl=0).
 
 References
 ==========
