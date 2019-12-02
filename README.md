@@ -30,6 +30,9 @@ All the simulation results can be reproduced by using the r scripts under IGREX-
 ```
 git clone https://github.com/mxcai/iGREX
 cd iGREX/IGREX_sim
+mkdir results
+```
+Running the simulation.sh script will generate all the results for creating figures in the manuscrupt. Note that each chunk of the codes in the bash script takes around 10 hours to finish. It is suggested to be run on the server. One can also run only part of the codes at a time. For example, to produce the results shown in Figure 1e of the manuscript, use the following:
 ```
 for rho in {0.1,0.3,0.5,0.8}
 do
