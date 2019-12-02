@@ -46,7 +46,7 @@ iGREXs(prefix_eQTL_geno, prefix_GWAS, gene_expr, Z_score, cov_eQTL = "", cov_GWA
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  code{\link{MoM_3var_ss}}, code{\link{iGREXs_init}}
+  \code{\link{MoM_3var_ss}}, \code{\link{iGREXs_init}}
 }
 \examples{
 See Vegnette.

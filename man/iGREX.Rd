@@ -42,7 +42,7 @@ iGREX(prefix_eQTL_geno, prefix_GWAS, gene_expr, cov_eQTL, cov_GWAS, Ka, whCol = 
   Mingxuan Cai
 }
 \seealso{
- code{\link{REML_3var}}, code{\link{MoM_3var}}, code{\link{iGREX_init}}
+ \code{\link{REML_3var}}, \code{\link{MoM_3var}}, \code{\link{iGREX_init}}
 }
 \examples{
 See Vegnette.
