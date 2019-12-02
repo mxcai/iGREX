@@ -7,7 +7,7 @@ IGREX for quantifying the impact of genetically regulated expression on phenotyp
 This package provides functions for fitting IGREX, a statistical model for quantifying the impact of genetically regulated expression on phenotypes.
 }
 \usage{
-iGREX-package(x)
+iGREX-package
 }
 \details{
 \tabular{ll}{
