@@ -26,7 +26,14 @@ package?iGREX
 Reproducibility
 ==========
 
-All the simulation results can be reproduced by using the code at [sim-iGREX](https://github.com/mxcai/sim-iGREX).
+All the simulation results can be reproduced by using the r scripts under IGREX-sim folder of thsi repository. To reproduce the results in our manuscript, one can first clone this repository and then run the following bash scrhpts:
+Figure 1e:
+```
+for rho in {0.1,0.3,0.5,0.8}
+do
+Rscript LD_rho.R 1000 4000 100 200 0.3 0.2 0.3 500 30 $rho
+done
+```
 The `iGREXs` function requires only the GWAS summary statistics and the eQTL data for analysis, which greatly enhances the applicability of our software. The analysis in the vignette using GWAS summary statistics can be reproduced with open access data. The processed High-Density Lipoprotein cholesterol (HDL) GWAS summary statistics, Geuvadis gene expression data and 1000 Genomes genotype data used in the analysis can be downloaded from [this Dropbox link](https://www.dropbox.com/sh/xbq0a0or1nmcaef/AABcmzTxgWPJGpcCj9mYOzwma?dl=0).
 
 References
