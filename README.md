@@ -36,7 +36,7 @@ mkdir results
 ```
 Running the simulation.sh script will generate all the results for creating figures in the manuscrupt. Note that each chunk of the codes in the bash script takes around 10 hours to finish. It is suggested to be run on the server.
 ```
-chmod +x simulation
+chmod +x simulation.sh
 ./simulation.sh
 ```
 One can also run only part of the codes at a time. For example, to produce the results shown in Figure 1e of the manuscript, use the following:
