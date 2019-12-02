@@ -47,6 +47,7 @@ Rscript LD_rho.R 1000 4000 100 200 0.3 0.2 0.3 500 30 $rho
 done
 ```
 Once the results are obtained, one can use the r script generate_figure.R to produce figures in the manuscript.
+
 References
 ==========
 
