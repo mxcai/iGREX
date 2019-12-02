@@ -26,8 +26,10 @@ package?iGREX
 Reproducibility
 ==========
 
-All the simulation results can be reproduced by using the r scripts under IGREX-sim folder of thsi repository. To reproduce the results in our manuscript, one can first clone this repository and then run the following bash scrhpts:
-Figure 1e:
+All the simulation results can be reproduced by using the r scripts under IGREX-sim folder of thsi repository. To reproduce the results in our manuscript, one can first clone this repository and goes to the IGREX_sim folder:
+```
+git clone https://github.com/mxcai/iGREX
+cd iGREX/IGREX_sim
 ```
 for rho in {0.1,0.3,0.5,0.8}
 do
