@@ -34,7 +34,7 @@ git clone https://github.com/mxcai/iGREX
 cd iGREX/IGREX_sim
 mkdir results
 ```
-Running the simulation.sh script will generate all the results for creating figures in the manuscrupt. Note that each chunk of the codes in the bash script takes around 10 hours to finish. It is suggested to be run on the server.
+Running the simulation.sh script will generate all the results for creating figures in the manuscrupt. Note that each chunk of the codes in the bash script takes hours to finish a single parameter setting. It is suggested to be run on the server.
 ```
 chmod +x simulation.sh
 ./simulation.sh
