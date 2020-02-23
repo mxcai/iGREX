@@ -51,7 +51,7 @@ Once the results are obtained, one can use the r script generate_figures.R to pr
 References
 ==========
 
-Mingxuan Cai, Lin S Chen, Jin Liu and Can Yang. IGREX for quantifying the impact of genetically regulated expression on phenotypes. biorxiv: https://www.biorxiv.org/content/10.1101/546580v2.
+Mingxuan Cai, Lin S Chen, Jin Liu and Can Yang. IGREX for quantifying the impact of genetically regulated expression on phenotypes. NAR Genomics and Bioinformatics. https://doi.org/10.1093/nargab/lqaa010.
 
 
 Development
