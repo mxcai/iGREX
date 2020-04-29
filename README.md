@@ -25,6 +25,32 @@ package?iGREX
 
 The `iGREXs` function requires only the GWAS summary statistics and the eQTL data for analysis, which greatly enhances the applicability of our software. The analysis in the vignette using GWAS summary statistics can be reproduced with open access data. The processed High-Density Lipoprotein cholesterol (HDL) GWAS summary statistics, Geuvadis gene expression data and 1000 Genomes genotype data used in the analysis can be downloaded from [this Dropbox link](https://www.dropbox.com/sh/xbq0a0or1nmcaef/AABcmzTxgWPJGpcCj9mYOzwma?dl=0). One can follow the instructions in the vignette to analyze these dataset.
 
+Application of IGREX-s to GTEx data
+===========
+To apply IGREX-s to GTEx data with GWAS summary statistics, you need the following input files:
+1. The genotype file of GTEx samples, which should be applied through dbGap. Find instructtions in https://gtexportal.org/home/protectedDataAccess. In the function iGREXs, argument `prefix_eQTL_geno` takes the prefix of the genotype file in plink format.
+2. The expression file of interested tissue, preprocessed and normalized. You can download this data from the GTEx websit. The v7 release used in our paper can be found at https://storage.googleapis.com/gtex_analysis_v7/single_tissue_eqtl_data/GTEx_Analysis_v7_eQTL_expression_matrices.tar.gz. In the function iGREXs, argument `gene_expr` takes the full name of the expression file. File format should follow the one in the vignette.
+3. The covarites file of eQTL, including genotype principal components and PEER factors as provided in the GTEx website. The v7 release used in our paper can be found at https://storage.googleapis.com/gtex_analysis_v7/single_tissue_eqtl_data/GTEx_Analysis_v7_eQTL_covariates.tar.gz. In the function iGREXs, argument `cov_eQTL` takes the full name of the eQTL covariates file.
+4. GWAS summary statistics in the required format as shown in the vignette. In the function iGREXs, argument `Z_score` takes the full name of the eQTL covariates file.
+5. A genotype file as LD reference for the GWAS. In practice you can simply use the same genotype file of GTEx samples in 1. In the function iGREXs, argument `prefix_GWAS` takes the prefix of the genotype file in plink format.
+6. The covarites file of the GWAS LD reference, age, sex, genotype PC's, etc. If you are using the genotypes of GTEx samples as LD reference, This file contains the PC columns of eQTL covarites in 3. 
+7. A kinship matrix of the LD reference.
+
+Suppose we are using GTEx genotypes as GWAS LD reference, IGREX-s can be fitted by:
+
+```
+file_geno_gtex = "GTEx_qc_hm3" # prefix of GTEx genotype plink files (GTEx_qc_hm3.bim/GTEx_qc_hm3.bed/GTEx_qc_hm3.fam)
+file_geno_GWASref = "GTEx_qc_hm3" # use GTEx genotypes as GWAS LD reference
+file_expr = "Liver_gene_expression.txt" # full name of normalized gene expression matrix file 
+file_covar_gtex = "Liver_cov.txt" # covariates of GTEx eQTL data
+file_cov_GWASref = "GTEx_qc_hm3_pc5.eigenvec" # covariates of GWAS LD reference 
+file_z = "HDL_summary.txt" # summary statistics file
+
+fit_IGREXs <- iGREXs(prefix_eQTL_geno=file_qtlgeno,prefix_GWAS=file_GWASgeno,gene_expr=file_expression,Z_score=file_z,
+cov_eQTL=file_qtlcov,cov_GWAS=file_GWAScov,Ka=K,bw = 500000)
+```
+
+
 Reproducibility
 ==========
 
