@@ -8,8 +8,10 @@ rl_skat_w <- function(Z,y,X=NULL,W=NULL,intercept=T,method=NULL){
   m <- ncol(Z)
 
   if(is.null(W)){
+    weighted <- F
     W <- diag(m)
   } else{
+    weighted <- T
     tmp <- eigen(W)
     UW <- tmp$vectors
     DW <- tmp$values
@@ -79,7 +81,7 @@ rl_skat_w <- function(Z,y,X=NULL,W=NULL,intercept=T,method=NULL){
 
   if(method=="low-rank"){
     #calculate SZ
-    if(!is.null(W)){
+    if(weighted){
       # Z <- Z %*% UW %*% diag(sqrt(DW))
       Z <- (Z %*% UW) * t(replicate(n,sqrt(DW)))
     }
