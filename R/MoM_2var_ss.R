@@ -56,5 +56,5 @@ MoM_2var_ss <- function(Km,zs,n,Z=NULL,group=NULL){
 
 
   # ret <- list(h=h,Km=Km,se_h=sqrt(var_h),c_jf=c_jf,S=S,c=c)
-  ret <- list(h=h,K=K,se_h=sqrt(var_h))
+  ret <- list(h=h,Km=Km,se_h=sqrt(var_h))
 }
